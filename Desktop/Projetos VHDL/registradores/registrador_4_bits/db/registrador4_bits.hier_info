@@ -1,0 +1,59 @@
+|registrador4_bits
+d0 => registrador_1bit:registrador1.dado
+d1 => registrador_1bit:registrador2.dado
+d2 => registrador_1bit:registrador3.dado
+d3 => registrador_1bit:registrador4.dado
+cargageral => registrador_1bit:registrador1.carga
+cargageral => registrador_1bit:registrador2.carga
+cargageral => registrador_1bit:registrador3.carga
+cargageral => registrador_1bit:registrador4.carga
+rst => registrador_1bit:registrador1.reset
+rst => registrador_1bit:registrador2.reset
+rst => registrador_1bit:registrador3.reset
+rst => registrador_1bit:registrador4.reset
+clk => registrador_1bit:registrador1.clock
+clk => registrador_1bit:registrador2.clock
+clk => registrador_1bit:registrador3.clock
+clk => registrador_1bit:registrador4.clock
+q_out0 <= registrador_1bit:registrador1.q
+q_out1 <= registrador_1bit:registrador2.q
+q_out2 <= registrador_1bit:registrador3.q
+q_out3 <= registrador_1bit:registrador4.q
+
+
+|registrador4_bits|registrador_1bit:registrador1
+clock => q~reg0.CLK
+reset => q~reg0.ACLR
+carga => ~NO_FANOUT~
+dado => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_not <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrador4_bits|registrador_1bit:registrador2
+clock => q~reg0.CLK
+reset => q~reg0.ACLR
+carga => ~NO_FANOUT~
+dado => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_not <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrador4_bits|registrador_1bit:registrador3
+clock => q~reg0.CLK
+reset => q~reg0.ACLR
+carga => ~NO_FANOUT~
+dado => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_not <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrador4_bits|registrador_1bit:registrador4
+clock => q~reg0.CLK
+reset => q~reg0.ACLR
+carga => ~NO_FANOUT~
+dado => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_not <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

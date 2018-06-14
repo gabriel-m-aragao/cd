@@ -1,0 +1,55 @@
+Library IEEE;
+Use IEEE.std_logic_1164.all;
+
+
+entity registrador_4bits is
+port(
+	clock,reset, carga : in std_logic;
+	dado: in std_logic_vector (3 downto 0);
+
+	q,q_not: out std_logic_vector (3 downto 0)
+);
+
+end registrador_4bits;
+
+architecture arc_registrador_4_bits of registrador 4 bits is
+
+signal qtemp: std_logic_vector(3 downto 0);
+begin
+	
+		process(clock,reset)
+		begin
+			if (reset ='1') then
+			 q<='0';
+			 --q_not<='1';
+			
+			 
+			elsif (clock'event and clock ='1') then
+				if carga = '1' then
+					q<=dado;
+					
+				--q_not<=not(dado);
+				
+				else
+					qtemp<=q;
+					
+				end if;				
+			end if;
+	end process;
+	
+					
+begin
+
+	register0:
+	port map(q0 => qtemp0);
+	register1:
+	port map(q1 => qtemp1);
+	register2:
+	port map(q2 => qtemp2);
+	register3:
+	port map(q3 => qtemp3);
+	
+	
+	
+
+end arc_flip_flop;
